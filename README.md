@@ -69,8 +69,8 @@ On the first run, every dataset image is passed through VGG16 and the resulting 
 ## Installation
 
 ```bash
-git clone https://github.com/bilalzoubaa/FDS.git
-cd FDS
+https://github.com/bilalzoubaa/VGG16-KNN-Image-Classifier.git
+cd VGG16-KNN-Image-Classifier
 python -m venv venv
 
 # Activate the virtual environment
@@ -81,10 +81,6 @@ source venv/bin/activate
 
 pip install -r requirements.txt
 ```
-
-## Environment Variables
-
-None. This project does not use environment variables, external services, or credentials.
 
 ## Usage
 
@@ -117,9 +113,6 @@ CLI options:
 
 On the first run, `main.py` extracts VGG16 features for the entire dataset and caches them to `features.npy`, `labels.npy`, and `image_paths.npy`. Subsequent runs load these directly, skipping re-extraction.
 
-## API
-
-This project is a standalone script/pipeline — it does not expose a web API or REST endpoints.
 
 ## Testing
 
@@ -130,23 +123,8 @@ pip install pytest
 pytest tests/
 ```
 
-There is currently no automated test for the feature extraction or KNN prediction steps, since they depend on the VGG16 weights and the full image dataset.
-
-## Deployment
-
-There is no deployed version of this project. It is intended to be run locally as a Python script.
-
-## Future Improvements
-
-- Expose the classifier through a small REST API (e.g. FastAPI) for programmatic predictions.
-- Add a held-out validation split and report accuracy / confusion matrix instead of only visual inspection.
-- Compare VGG16 features against other backbones (ResNet, EfficientNet, MobileNet).
-- Add a Dockerfile for reproducible environments.
-- Add CI (GitHub Actions) to run the test suite on every push.
-
 ## Author
 
 **Bilal Zoubaa**
 
 GitHub: [github.com/bilalzoubaa](https://github.com/bilalzoubaa)
-LinkedIn: _add your profile link here_
